@@ -17,7 +17,8 @@ class ShareSec extends StatelessWidget {
       flex: 2,
       child: GestureDetector(
         onTap: () {
-          Share.share('${quote?.a ?? ''} by ${quote?.a ?? ''}', subject: '');
+          Share.share('${quote?.q ?? ''} by ${quote?.a ?? ''}',
+              subject: 'Share Quote by ${quote?.a ?? ''}');
         },
         child: Container(
           padding: EdgeInsets.only(right: 40),

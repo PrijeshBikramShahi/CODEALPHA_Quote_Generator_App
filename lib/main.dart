@@ -47,31 +47,38 @@ class _MyAppState extends State<MyApp> {
                       urlData['urls']['full'],
                     ),
                     fit: BoxFit.fill)),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Stack(
               children: [
-                ShareSec(quote: quote),
-                QuoteSec(quote: quote),
-                Expanded(
-                  flex: 2,
-                  child: GestureDetector(
-                    onTap: () {
-                      _fetchQuote();
-                      getImgData();
-                    },
-                    child: Container(
-                      padding: EdgeInsets.only(bottom: 50),
-                      child: Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            color: Colors.black38, shape: BoxShape.circle),
-                        child: Icon(
-                          Icons.restart_alt,
-                          size: 55,
+                Container(
+                  color: Colors.black45,
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ShareSec(quote: quote),
+                    QuoteSec(quote: quote),
+                    Expanded(
+                      flex: 2,
+                      child: GestureDetector(
+                        onTap: () {
+                          _fetchQuote();
+                          getImgData();
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(bottom: 50),
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                color: Colors.black38, shape: BoxShape.circle),
+                            child: Icon(
+                              Icons.restart_alt,
+                              size: 55,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
